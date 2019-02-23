@@ -16,10 +16,11 @@
     <td><%= blog.content %></td>
      <td><%= blog.image.url %></td>
      <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
-     <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
-     <td><%= link_to "ブログを削除する", blog_path(blog.id), method: :delete, data: {confirm: "本当に削除してもいいですか？"} %></td>
+     <% if user_signed_in? && blog.user_id == current_user.id %>
+       <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
+       <td><%= link_to "ブログを削除する", blog_path(blog.id), method: :delete, data: {confirm: "本当に削除してもいいですか？"} %></td>
+       <td><%= link_to '新しくブログを投稿する', new_blog_path %></td>
+     <% end %>  
   </tr>
 <% end %>
 </table>
-
-<%= link_to '新しくブログを投稿する', new_blog_path %>
