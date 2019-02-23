@@ -16,9 +16,9 @@
      <td><%= blog.image.url %></td>
      <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
      <% if user_signed_in? && blog.user_id == current_user.id %>
-       <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
-       <td><%= link_to "ブログを削除する", blog_path(blog.id), method: :delete, data: {confirm: "本当に削除してもいいですか？"} %></td>
-       <td><%= link_to '新しくブログを投稿する', new_blog_path %></td>
+       <td><%= link_to 'ブログ投稿', new_blog_path, class:"btn btn-ml btn-success" %></td>
+       <td><%= link_to "ブログ編集", edit_blog_path(blog.id), class:"btn btn-ml btn-info" %></td>
+       <td><%= link_to "ブログ削除", blog_path(blog.id), method: :delete, data: {confirm: "本当に削除してもいいですか？"}, class:"btn btn-ml btn-danger" %></td>
      <% end %>  
   </tr>
 <% end %>

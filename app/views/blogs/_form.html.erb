@@ -12,13 +12,13 @@
  
   <div class="blog_title">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, placeholder:"今なにしてる？" %>
   </div>
    <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "シェア", class:"btn btn-lg btn-success" %>
 <% end %>
 
 <%= link_to "ブログ一覧画面に戻る", blogs_path %>
