@@ -1,9 +1,10 @@
 <h1>ブログ詳細画面</h1>
 <%= link_to 'Back', blogs_path %>
-<p>ユーザー</p>: <%= @blog.user.name %>
-<p>内容: <%= @blog.content %></p>
-<p>画像: <%= image_tag @blog.image.url %></p>
-
 <% if user_signed_in? && @blog.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_blog_path(@blog) %> |
+  <%= link_to 'Edit', edit_blog_path(@blog) %><br>
 <% end %>
+<%= @blog.user.name %><br>
+<%= simple_format(@blog.content) %></p>
+<div class="main_picture">
+  <p><%= image_tag @blog.image.url %></p>
+</div>
