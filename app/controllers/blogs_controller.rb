@@ -27,16 +27,29 @@ class BlogsController < ApplicationController
   end
   
   def update
-      if @blog.update(blog_params)
-        redirect_to blogs_path, notice: "ブログを編集しました"
-      else
-        render 'edit'
+    if @blog.user_id == current_user.id
+      respond_to do |format|
+        if @blog.update(blog_params)
+          format.html { redirect_to blogs_path, notice: "ブログを編集しました" }
+        else
+          format.html { render :edit }
+        end
       end
+    else
+      redirect_to edit_blog_path, notice: "You don't have permission."
+    end
   end
   
   def destroy
+    if @blog.user_id == current_user.id
     @blog.destroy
-    redirect_to blogs_path, notice:"ブログを削除しました"
+      msg = "Blog was successfully destroyed."
+    else
+      msg = "You don't have permission"
+    end
+    respond_to do |format|
+      format.html { redirect_to blogs_path, notice: msg }
+    end
   end
   
   
