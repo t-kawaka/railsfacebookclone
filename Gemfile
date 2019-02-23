@@ -18,6 +18,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick',             '4.7.0'
 gem 'bcrypt', '3.1.12'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
