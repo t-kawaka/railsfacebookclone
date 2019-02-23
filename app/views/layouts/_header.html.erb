@@ -4,17 +4,37 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <a class="navbar-brand logo"  href="#">F</a>
+    <a class="navbar-brand logo"  href="/">F</a>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="検索">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">検索</button>
     </form>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">ホーム<span class="sr-only">(current)</span></a>
+        <li class="nav-link active"><%= link_to "ホーム", root_path %></li>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">投稿</a>
+        <% if user_signed_in? %>
+        <li class="nav-item active">
+          Logged in as <strong><%= current_user.name %></strong>.
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ブログ投稿", new_blog_path %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "登録情報修正", edit_user_registration_path %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
+        </li>
+        <% else %>
+        <li class="nav-item active">
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+        <li class="nav-item active">
+           <%= link_to "ログイン", new_user_session_path %>
+        </li>
+      <% end %>
       </li>
     </ul>
   </div>
