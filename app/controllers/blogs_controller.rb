@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(params)
     if @blog.save
     Blog.create(blog_params)
-      redirect_to new_blog_path
+      redirect_to new_blog_path, notice:"ブログを作成しました"
     else
       render 'new'
     end
@@ -42,7 +42,7 @@ class BlogsController < ApplicationController
   private
   
   def blog_params
-    params.require(:blog).permit(:content, :image)
+    params.require(:blog).permit(:content, :image, :image_cache)
   end
   
   def set_blog
