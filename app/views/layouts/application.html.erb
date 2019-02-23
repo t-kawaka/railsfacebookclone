@@ -9,17 +9,11 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.name %></strong>.
-      <%= link_to "ブログ投稿", new_blog_path %>
-      <%= link_to "登録情報修正", edit_user_registration_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <%= render 'shared/signed_in' %>
+      <%= yield %>
+     </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

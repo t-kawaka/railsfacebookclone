@@ -1,3 +1,56 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+   height: 100%;
+   font-family:verdana,arial,sans-serif;
+   background-color: #e9ebee;
+   color: #1d2129;
+}
+
+/*header */
+.navbar{
+  background-color: #4267b2;
+  border-bottom: 1px solid #29487d;
+  color: #fff;
+}
+.navbar-brand {
+  float: left;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.nav-item{
+  padding-left:20px;
+  color: white;
+}
+
+/*footer */
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
