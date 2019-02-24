@@ -1,32 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <a class="navbar-brand logo"  href="/">F</a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <% if user_signed_in? %>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <a class="navbar-brand logo"  href="/">F</a>
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/blogs/new">ブログ投稿<span class="sr-only">(current)</span></a>
+          <% if user_signed_in? %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/blogs/new">ブログ投稿<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/edit">登録情報修正<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
+          </li>
+          <% else %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/sign_up">新規登録<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active position">
+            <a class="nav-link" href="/users/sign_in">ログイン<span class="sr-only">(current)</span></a>
+          </li>
+        <% end %>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/users/edit">登録情報修正<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-        </li>
-        <% else %>
-        <li class="nav-item active">
-          <a class="nav-link" href="/users/sign_up">新規登録<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active position">
-          <a class="nav-link" href="/users/sign_in">ログイン<span class="sr-only">(current)</span></a>
-        </li>
-      <% end %>
-      </li>
-    </ul>
-  </div>
+      </ul>
+    </div>
   </div>
 </nav>
