@@ -7,28 +7,22 @@
     <a class="navbar-brand logo"  href="/">F</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <li class="nav-link active"><%= link_to "ホーム", root_path %></li>
-      </li>
-      <li class="nav-item active">
         <% if user_signed_in? %>
         <li class="nav-item active">
-          ユーザー名 <strong><%= current_user.name %></strong>.
+          <a class="nav-link" href="/blogs/new">ブログ投稿<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <%= link_to "ブログ投稿", new_blog_path %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "登録情報修正", edit_user_registration_path %>
+          <a class="nav-link" href="/users/edit">登録情報修正<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
         </li>
         <% else %>
         <li class="nav-item active">
-          <%= link_to "新規登録", new_user_registration_path %>
+          <a class="nav-link" href="/users/sign_up">新規登録<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
-           <%= link_to "ログイン", new_user_session_path %>
+        <li class="nav-item active position">
+          <a class="nav-link" href="/users/sign_in">ログイン<span class="sr-only">(current)</span></a>
         </li>
       <% end %>
       </li>

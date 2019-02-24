@@ -25,6 +25,15 @@ html, body {
   font-color: white;
 }
 
+li a{
+  color:white !important;
+  padding-top:1px !important;
+}
+
+li a:hover {
+text-decoration: none;
+}
+
 /*footer */
 .bg-info{
   background-color: white !important;
@@ -37,6 +46,9 @@ html, body {
 td{
   width:150px;
 }
+
+
+
 
 /*ブログ詳細画面（show） */
 .main_picture img{

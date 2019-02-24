@@ -1,7 +1,7 @@
 <h1>ブログ詳細画面</h1>
-<%= link_to 'Back', blogs_path, class:"btn btn-ml btn-info" %><br>
+<%= link_to 'Back', blogs_path, class:"btn btn-ml btn-light" %><br>
 <% if user_signed_in? && @blog.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_blog_path(@blog) %><br>
+  <%= link_to 'Edit', edit_blog_path(@blog), class:"btn btn-ml btn-info mt-3" %><br>
 <% end %>
 <table>
   <div class="name">

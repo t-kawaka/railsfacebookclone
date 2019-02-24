@@ -1,6 +1,7 @@
 <h1>ブログ一覧</h1>
 <% if user_signed_in? %>
-  <%= link_to 'ブログ投稿', new_blog_path, class:"btn btn-ml btn-success" %>
+  <strong>ユーザー名：<%= current_user.name %></strong><br>
+  <%= link_to 'ブログ投稿', new_blog_path, class:"btn btn-ml btn-success mt-3" %>
 <% end %>
 
 <table class="table-light mt-3 mb-4 p-4">
