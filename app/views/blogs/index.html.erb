@@ -5,12 +5,14 @@
     <th>ユーザー名</th>
     <th>内容</th>
     <th>画像（クリックすると詳細内容が見れます）</th>
+    <th>投稿日時</th>
   </tr>
 <% @blogs.each do |blog| %>
   <tr>
     <td><%= blog.user.name %></td>
     <td><%= blog.content %></td>
     <td><%=link_to image_tag(blog.image_url,:size => "200x200"), blog_path(blog.id) %></td>
+    <td><%= blog.created_at.strftime('%Y年%m月%d日 %H時%M分%S秒') %></td>
      <% if user_signed_in? && blog.user_id == current_user.id %>
        <td><%= link_to 'ブログ投稿', new_blog_path, class:"btn btn-ml btn-success" %></td>
        <td><%= link_to "ブログ編集", edit_blog_path(blog.id), class:"btn btn-ml btn-info" %></td>

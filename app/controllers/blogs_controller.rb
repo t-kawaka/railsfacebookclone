@@ -6,7 +6,11 @@ class BlogsController < ApplicationController
   end
   
   def new
-    @blog = Blog.new
+    if params[:back]
+      @blog = Blog.new(blog_params)
+    else
+      @blog = Blog.new
+    end
   end
   
   def create
@@ -19,6 +23,11 @@ class BlogsController < ApplicationController
       render 'new'
     end
   end
+  
+  def confirm
+    @blog = Blog.new(blog_params)
+  end
+  
   
   def show
   end
@@ -51,7 +60,6 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_path, notice: msg }
     end
   end
-  
   
   private
   
