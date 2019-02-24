@@ -26,33 +26,11 @@ html, body {
 }
 
 /*footer */
-.footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
+.bg-info{
+  background-color: white !important;
 }
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
+.text-white{
+  color: #d6c3c3 !important;
 }
 
 /*トップ画面（index） */
@@ -64,4 +42,13 @@ td{
 .main_picture img{
   width: 500px;
   border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.name{
+  margin: 10px auto;
+}
+
+.content{
+  margin: 20px auto;
 }

@@ -4,9 +4,9 @@
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
 
-  <p>本文:<%= simple_format(@blog.content) %></p><br>
+  <p><%= simple_format(@blog.content) %></p><br>
   <div class="main_picture">
-    <p>画像:<br><%= image_tag @blog.image.url %></p><br>
+    <p><%= image_tag @blog.image.url %></P>
   </div>
   <%= form.submit  "投稿する", class:"btn btn-ml btn-success" %>
 <% end %>
@@ -14,5 +14,5 @@
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
-  <%= form.submit "もどる", name: 'back', class:"btn btn-ml btn-info" %>
+  <%= form.submit "もどる", name: 'back', class:"btn btn-ml btn-info mb-4" %>
 <% end %>

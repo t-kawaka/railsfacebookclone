@@ -1,8 +1,19 @@
-<footer class="footer fixed-bottom">
-  <div class="container">
-    <small>
-      <a href="http://railstutorial.org/">Rails Tutorial</a>
-      by Michael Hartl
-    </small>
+<footer class="fixed-bottom">
+  <div class="container-fluid bg-info py-2">
+    <div class="container">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-sm-10 text-white">
+            <% if user_signed_in? %>
+              <a href="/" class="text-white pr-4", style="text-decoration: none">Top</a>
+            <% else %>
+               <a href="/" class="text-white pr-4", style="text-decoration: none">Top</a>
+               <a href="/users/sign_up" class="text-white", style="text-decoration: none">新規作成</a>
+               <a href="/users/sign_in" class="text-white pl-3", style="text-decoration: none">ログイン</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
