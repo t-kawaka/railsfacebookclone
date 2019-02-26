@@ -8,11 +8,15 @@
   <div class="main_picture">
     <p><%= image_tag @blog.image.url %></P>
   </div>
-  <%= form.submit  "投稿する", class:"btn btn-ml btn-success" %>
+  <div class="col-5">
+    <%= form.submit  "投稿する", class:"btn btn-ml btn-success" %>
+  </div>
 <% end %>
 
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
-  <%= form.submit "もどる", name: 'back', class:"btn btn-ml btn-info mb-4" %>
+  <div class="col-5">
+    <%= form.submit "もどる", name: 'back', class:"btn btn-ml btn-info mb-5" %>
+  </div>
 <% end %>
