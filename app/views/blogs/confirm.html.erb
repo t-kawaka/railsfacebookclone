@@ -1,13 +1,12 @@
 <h3>以下の内容で、送信する。</h3>
 
-<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
-  <%= image_tag(@blog.image.url) if @blog.image %>
+<%= form_with(model: @blog, url: blogs_path, local: true, multipart: true) do |form| %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
 
   <p><%= simple_format(@blog.content) %></p><br>
   <div class="main_picture">
-    <p><%= image_tag @blog.image.url %></P>
+    <p><%= image_tag(@blog.image) %></P>
   </div>
   <div class="col-5">
     <%= form.submit  "投稿する", class:"btn btn-ml btn-success" %>
