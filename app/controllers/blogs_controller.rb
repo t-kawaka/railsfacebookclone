@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     if @blog.save
     Blog.create(blog_params)
-      redirect_to new_blog_path, notice:"ブログを作成しました"
+      redirect_to blogs_path, notice:"ブログを作成しました"
     else
       render 'new'
     end
@@ -27,7 +27,6 @@ class BlogsController < ApplicationController
   def confirm
     @blog = Blog.new(blog_params)
   end
-  
   
   def show
   end

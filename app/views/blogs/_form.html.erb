@@ -17,6 +17,7 @@
    <div class="field">
     <%= form.label :画像 %>
     <%= form.file_field :image, class:"form-control" %>
+    <%= form.hidden_field :image_cache, class:"form-control" %>
   </div>
   <%= form.submit "シェア", class:"btn btn-lg btn-success my-3" %>
 <% end %>
