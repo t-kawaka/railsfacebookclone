@@ -3,7 +3,6 @@
 <%= form_with(model: @blog, url: blogs_path, local: true, multipart: true) do |form| %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
-
   <p><%= simple_format(@blog.content) %></p><br>
   <div class="main_picture">
     <p><%= image_tag(@blog.image) %></P>

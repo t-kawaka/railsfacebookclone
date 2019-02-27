@@ -23,6 +23,7 @@ class BlogsController < ApplicationController
       render 'new'
     end
   end
+
   
   def confirm
     @blog = Blog.new(blog_params)
