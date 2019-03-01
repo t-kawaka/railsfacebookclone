@@ -15,8 +15,8 @@
     <%= form.text_area :content, placeholder:"今なにしてる？", class:"form-control", rows: 5 %>
   </div>
   <div class="field">
-    <%= form.label :画像 %>
-    <%= image_tag(@blog.image) if @blog.image %>
+    <%= form.label :画像 %><br>
+    <%= image_tag(@blog.image, :width => "400px", class:"mb-5") if @blog.image %>
     <%= form.file_field :image, class:"form-control" %>
     <%= form.hidden_field :image_cache, class:"form-control" %>
   </div>
